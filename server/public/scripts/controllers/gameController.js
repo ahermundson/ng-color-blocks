@@ -1,9 +1,12 @@
-colorBlocks.controller('GameController', ['$scope', function($scope) {
+colorBlocks.controller('GameController', ['$scope', 'DataFactory', function($scope, DataFactory) {
 
 console.log('game controller running');
+console.log(DataFactory);
 
 var self = this;
-self.colors = ['red', 'blue', 'magenta', 'green', 'pink'];
+self.colors = DataFactory.colors;
+self.winCounter = 0;
+self.win
 
 // start game
 init();
@@ -18,10 +21,16 @@ function init() {
 // click handler for guessing colors
 self.handleInput = function(clickedColor) {
   if(clickedColor === self.currentColor) {
+    self.winCounter++;
     alert('You got it!\n\nNow try another!');
     init();
   } else {
     self.messageText = 'Oh no! You guessed wrong!';
+    DataFactory.highScore.push(self.winCounter);
+    DataFactory.highScore.sort(function(a, b){return b-a});
+    console.log(DataFactory.highScore);
+    self.winCounter = 0;
+    // init();
   }
 }
 

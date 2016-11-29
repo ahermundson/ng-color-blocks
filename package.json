@@ -14,5 +14,13 @@
     "angular-route": "^1.5.8",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahermundson/ng-color-blocks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahermundson/ng-color-blocks/issues"
+  },
+  "homepage": "https://github.com/ahermundson/ng-color-blocks#readme"
 }
