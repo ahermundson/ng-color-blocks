@@ -1,4 +1,4 @@
 <h3>High Scores</h3>
 <ul>
-  <li ng-repeat="highScore in highScore.highScore">{{highScore}}</li>
+  <li ng-repeat="highScore in highScore.highScore track by $index">{{highScore}}</li>
 </ul>
